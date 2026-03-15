@@ -15,6 +15,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_TW',
     siteName: '武道台灣 butoTaiwan',
+    title: '武道台灣 butoTaiwan',
+    description: '台灣劍道週報。由台南武德殿製作，每週精選全球劍道資訊，每月深度月刊訪談台灣劍道前輩。',
+    images: [
+      {
+        url: 'https://upload.wikimedia.org/wikipedia/commons/1/10/%E5%8F%B0%E5%8D%97%E6%AD%A6%E5%BE%B7%E6%AE%BF_Tainan_Wude_Hall_-_panoramio.jpg',
+        width: 1024,
+        height: 768,
+        alt: '台南武德殿',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '武道台灣 butoTaiwan',
+    description: '台灣劍道週報。由台南武德殿製作，每週精選全球劍道資訊，每月深度月刊訪談台灣劍道前輩。',
+    images: ['https://upload.wikimedia.org/wikipedia/commons/1/10/%E5%8F%B0%E5%8D%97%E6%AD%A6%E5%BE%B7%E6%AE%BF_Tainan_Wude_Hall_-_panoramio.jpg'],
   },
 }
 
