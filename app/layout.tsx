@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   },
   description: '台灣劍道週報。由台南武德殿製作，每週精選全球劍道資訊，每月深度月刊訪談台灣劍道前輩。',
   keywords: ['劍道', '台灣劍道', '武道台灣', '台南武德殿', '劍道週報'],
+  alternates: {
+    types: {
+      'application/rss+xml': 'https://buto-taiwan.vercel.app/feed.xml',
+    },
+  },
   openGraph: {
     type: 'website',
     locale: 'zh_TW',
