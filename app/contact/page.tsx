@@ -14,17 +14,14 @@ export default function ContactPage() {
           <p className="font-sans text-base text-kendo-black/60 leading-relaxed mb-8 max-w-[45ch]">
             無論是投稿、道場收錄申請、廣告合作或任何問題，都歡迎來信。
           </p>
-          <div className="space-y-6 border-t border-border pt-6">
-            {[
-              { label: '投稿洽詢', value: 'contribute@butotaiwan.com' },
-              { label: '道場收錄', value: 'dojo@butotaiwan.com' },
-              { label: '廣告合作', value: 'ads@butotaiwan.com' },
-            ].map(({ label, value }) => (
-              <div key={label}>
-                <p className="font-sans text-xs text-kendo-black/40 uppercase tracking-wider mb-1">{label}</p>
-                <a href={`mailto:${value}`} className="font-sans text-sm text-kendo-red hover:underline">{value}</a>
-              </div>
-            ))}
+          <div className="border-t border-border pt-6">
+            <p className="font-sans text-xs text-kendo-black/40 uppercase tracking-wider mb-2">信箱</p>
+            <a href="mailto:butotaiwan@outlook.com" className="font-sans text-sm text-kendo-red hover:underline">
+              butotaiwan@outlook.com
+            </a>
+            <p className="font-sans text-xs text-kendo-black/40 mt-2 leading-relaxed">
+              投稿、道場收錄、廣告合作均來此信箱，請在主旨註明類別。
+            </p>
           </div>
         </div>
 
