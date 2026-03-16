@@ -57,6 +57,6 @@ export const weeklyReports: WeeklyReportMeta[] = [
     category: 'taiwan',
     tags: ['台灣賽事', '大學劍道', '段位審查', '春季賽程'],
     excerpt: '2026年春季台灣劍道賽事密集展開。大學聯賽首場於3月底登場，全國段位審查名額縮減引發討論，審判員資格講習新增線上課程，海外歸台選手首次獲得直接參賽資格。',
-    newsCount: 5,
+    newsCount: 4,
   },
 ]
