@@ -51,11 +51,13 @@ export default function HomePage() {
               <p className="font-sans text-base text-kendo-black/60 leading-relaxed max-w-[55ch] mb-6">
                 {latestIssue.subtitle}
               </p>
-              <div className="flex items-center gap-3 mb-8 text-sm font-sans text-kendo-black/50">
-                <span>人物：{latestIssue.featurePersonName}</span>
-                <span>·</span>
-                <span>{latestIssue.featurePersonTitle}</span>
-              </div>
+              {latestIssue.featurePersonName && (
+                <div className="flex items-center gap-3 mb-8 text-sm font-sans text-kendo-black/50">
+                  <span>人物：{latestIssue.featurePersonName}</span>
+                  <span>·</span>
+                  <span>{latestIssue.featurePersonTitle}</span>
+                </div>
+              )}
               <div className="flex items-center gap-4">
                 <Link
                   href="/subscribe"
@@ -213,7 +215,7 @@ export default function HomePage() {
               訂閱武道台灣<br />每月直送你的信箱
             </h2>
             <p className="font-sans text-base text-kendo-black/60 leading-relaxed max-w-[50ch]">
-              完整月刊 PDF、獨家訪談音訊、以及每週精選文章總覽。我們只寄真正值得讀的內容。
+              每月精選文章直送信箱。我們只寄真正值得讀的內容。
             </p>
           </div>
           <div className="flex flex-col gap-3">
