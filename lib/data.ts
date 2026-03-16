@@ -42,6 +42,12 @@ export type Event = {
   description: string
 }
 
+export type DojoCourse = {
+  name: string
+  schedule: string
+  description?: string
+}
+
 export type Dojo = {
   id: string
   name: string
@@ -52,6 +58,7 @@ export type Dojo = {
   city: string
   phone?: string
   schedule: string
+  courses?: DojoCourse[]
   targetAudience: string[]
   established: number
   memberCount: number
@@ -403,7 +410,11 @@ export const dojos: Dojo[] = [
     address: '700臺南市中西區忠義路二段2號',
     city: '台南',
     schedule: '週六 13:00-17:00，週日 08:00-12:00',
-    targetAudience: ['成人', '青少年', '大學生'],
+    courses: [
+      { name: '劍道', schedule: '週六 13:00-17:00，週日 08:00-12:00' },
+      { name: '居合道', schedule: '週六 13:00-17:00，週日 08:00-12:00' },
+    ],
+    targetAudience: ['幼兒', '兒童', '青少年', '大學生', '成人', '社會人士'],
     established: 1902,
     memberCount: 47,
     facebook: 'https://www.facebook.com/Wudedian',

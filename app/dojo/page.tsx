@@ -106,6 +106,29 @@ export default function DojoPage() {
               )}
             </div>
 
+            {/* 授課分類 */}
+            {dojo.courses && dojo.courses.length > 0 && (
+              <div className="mb-4">
+                <p className="font-sans text-[10px] text-kendo-black/40 tracking-[0.15em] uppercase mb-2">授課分類</p>
+                <div className="space-y-2">
+                  {dojo.courses.map((course) => (
+                    <div key={course.name} className="border border-border px-3 py-2">
+                      <div className="flex items-center justify-between mb-1">
+                        <span className="font-sans text-sm font-medium text-kendo-black">{course.name}</span>
+                        <span className="font-sans text-xs text-kendo-black/40">{course.schedule}</span>
+                      </div>
+                      {course.description ? (
+                        <p className="font-sans text-xs text-kendo-black/60 leading-relaxed">{course.description}</p>
+                      ) : (
+                        <p className="font-sans text-xs text-kendo-black/30 italic">課程介紹即將更新</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* 適合對象 */}
             <div className="flex flex-wrap gap-1 mb-4">
               {dojo.targetAudience.map((t) => (
                 <span key={t} className="px-2 py-0.5 bg-border font-sans text-xs text-kendo-black/60">
