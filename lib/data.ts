@@ -404,9 +404,9 @@ export const dojos: Dojo[] = [
   {
     id: 'd1',
     name: '台南武德殿',
-    instructor: '總教練',
-    instructorRank: '',
-    assistants: [{ name: '李秩嘉', rank: '三段' }],
+    instructor: '李亮樟',
+    instructorRank: '七段',
+    assistants: [],
     address: '700臺南市中西區忠義路二段2號',
     city: '台南',
     schedule: '週六 13:00-17:00，週日 08:00-12:00',
