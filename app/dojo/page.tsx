@@ -2,13 +2,51 @@ import { dojos } from '@/lib/data'
 import { MapPin, Phone, Clock, Users } from '@phosphor-icons/react/dist/ssr'
 import type { Metadata } from 'next'
 
+const BASE_URL = 'https://buto-taiwan.vercel.app'
+
 export const metadata: Metadata = {
   title: '道場地圖',
   description: '台灣劍道道場完整資料庫',
 }
 
 export default function DojoPage() {
+  const dojoListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: '台灣劍道道場資料庫',
+    description: '台灣各縣市劍道道場完整資料庫',
+    url: `${BASE_URL}/dojo`,
+    numberOfItems: dojos.length,
+    itemListElement: dojos.map((dojo, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'SportsOrganization',
+        name: dojo.name,
+        sport: '劍道',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: dojo.address,
+          addressLocality: dojo.city,
+          addressCountry: 'TW',
+        },
+        telephone: dojo.phone,
+        url: dojo.website ?? dojo.facebook,
+        foundingDate: String(dojo.established),
+        memberOf: {
+          '@type': 'SportsOrganization',
+          name: '中華民國劍道協會',
+        },
+      },
+    })),
+  }
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(dojoListSchema) }}
+      />
     <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-12">
       <div className="mb-10 pb-8 border-b border-border">
         <p className="font-sans text-xs text-kendo-red tracking-[0.2em] uppercase mb-2">全台收錄</p>
@@ -45,7 +83,12 @@ export default function DojoPage() {
             <div className="space-y-3 mb-5">
               <div className="flex items-start gap-2 text-sm font-sans text-kendo-black/70">
                 <Users size={14} className="mt-0.5 flex-shrink-0 text-kendo-black/40" />
-                <span>指導：{dojo.instructor} {dojo.instructorRank}</span>
+                <span>
+                  指導：{dojo.instructor}{dojo.instructorRank ? ` ${dojo.instructorRank}` : ''}
+                  {dojo.assistants && dojo.assistants.map(a => (
+                    <span key={a.name} className="ml-2 text-kendo-black/50">助教：{a.name} {a.rank}</span>
+                  ))}
+                </span>
               </div>
               <div className="flex items-start gap-2 text-sm font-sans text-kendo-black/70">
                 <MapPin size={14} className="mt-0.5 flex-shrink-0 text-kendo-black/40" />
@@ -80,6 +123,11 @@ export default function DojoPage() {
                   官網
                 </a>
               )}
+              {dojo.facebook && (
+                <a href={dojo.facebook} target="_blank" rel="noopener noreferrer" className="font-sans text-xs text-kendo-red hover:underline">
+                  Facebook
+                </a>
+              )}
             </div>
           </div>
         ))}
@@ -95,5 +143,6 @@ export default function DojoPage() {
         </div>
       </div>
     </div>
+    </>
   )
 }

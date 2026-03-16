@@ -47,14 +47,16 @@ export type Dojo = {
   name: string
   instructor: string
   instructorRank: string
+  assistants?: { name: string; rank: string }[]
   address: string
   city: string
-  phone: string
+  phone?: string
   schedule: string
   targetAudience: string[]
   established: number
   memberCount: number
   website?: string
+  facebook?: string
 }
 
 export type Person = {
@@ -138,7 +140,7 @@ export const articles: Article[] = [
     excerpt: '2024年米蘭世錦賽，日本男子隊以壓倒性的戰術紀律再度奪冠。本文整合現場觀察與數據分析，拆解日本隊在決賽前三場的比賽策略。',
     category: 'competition',
     format: 'F2',
-    author: '特約記者 陳建宏',
+    author: '編輯部',
     publishedAt: '2026-03-10',
     coverImage: 'https://www.kendo-fik.org/wp-content/uploads/2024/07/19th-World-Kendo-Championships_1926.jpg',
     imageCredit: { name: 'FIK / 19th World Kendo Championships', url: 'http://www.kendo-fik.org/wkc/the-19th-world-kendo-championships-19wkc', license: '© FIK 2024' },
@@ -156,7 +158,6 @@ export const articles: Article[] = [
     references: [
       { label: 'FIK 第19屆世界劍道選手權大賽官方結果', url: 'http://www.kendo-fik.org/wkc/the-19th-world-kendo-championships-19wkc' },
       { label: 'Kendo Jidai International — Results of the 19th World Kendo Championships', url: 'https://kendojidai.com/2024/07/11/results-of-the-19th-world-kendo-championships/' },
-      { label: '陳建宏，現場採訪筆記，2024年7月，米蘭' },
     ],
   },
 
@@ -227,8 +228,8 @@ export const issues: Issue[] = [
     coverImage: 'https://live.staticflickr.com/8028/7126739267_72e214f0ec_b.jpg',
     publishedAt: '2026-03-01',
     articles: ['a2'],
-    featurePersonName: '吳相羅',
-    featurePersonTitle: '北投武德殿 資深劍道家',
+    featurePersonName: '',
+    featurePersonTitle: '',
     status: 'upcoming',
   },
 ]
@@ -396,61 +397,20 @@ export const dojos: Dojo[] = [
   {
     id: 'd1',
     name: '台南武德殿',
-    instructor: '張復堯',
-    instructorRank: '五段',
-    address: '台南市中西區永福路二段 227 號',
+    instructor: '總教練',
+    instructorRank: '',
+    assistants: [{ name: '李秩嘉', rank: '三段' }],
+    address: '700臺南市中西區忠義路二段2號',
     city: '台南',
-    phone: '06-213-XXXX',
-    schedule: '週二、週四 19:00-21:00，週六 09:00-12:00',
+    schedule: '週六 13:00-17:00，週日 08:00-12:00',
     targetAudience: ['成人', '青少年', '大學生'],
     established: 1902,
     memberCount: 47,
-    website: '#',
-  },
-  {
-    id: 'd2',
-    name: '台北信義劍道館',
-    instructor: '林建成',
-    instructorRank: '六段',
-    address: '台北市信義區松仁路 100 號',
-    city: '台北',
-    phone: '02-2701-XXXX',
-    schedule: '週一、週三、週五 18:30-20:30',
-    targetAudience: ['成人', '親子班'],
-    established: 1987,
-    memberCount: 83,
-  },
-  {
-    id: 'd3',
-    name: '高雄中山劍道場',
-    instructor: '吳雅婷',
-    instructorRank: '五段',
-    address: '高雄市苓雅區中山二路 388 號',
-    city: '高雄',
-    phone: '07-334-XXXX',
-    schedule: '週二、週四、週六 18:00-20:00',
-    targetAudience: ['成人', '兒童班', '入門班'],
-    established: 2003,
-    memberCount: 62,
+    facebook: 'https://www.facebook.com/Wudedian',
   },
 ]
 
-export const people: Person[] = [
-  {
-    id: 'p1',
-    slug: 'chen-mingzhi',
-    name: '陳明志',
-    rank: '七段',
-    title: '全國劍道委員會委員',
-    dojo: '台北信義劍道館',
-    entryYear: 1981,
-    speciality: '面技、出小手',
-    bio: '十歲習劍，師承已故的林大成八段。曾代表台灣出席三屆世界選手權大賽，現任全國委員會技術委員，致力推廣青少年劍道教育。',
-    achievements: ['1996 全國個人冠軍', '2001 全國個人季軍', '2018 優秀教練獎'],
-    relatedArticles: [],
-    photo: 'https://live.staticflickr.com/69/214865358_a39ba01583_b.jpg',
-  },
-]
+export const people: Person[] = []
 
 export const categoryLabels: Record<Article['category'], string> = {
   technique: '技法研究',
