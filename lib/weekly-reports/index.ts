@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-03-18_kendo-technique-maai-seme-2026',
+    title: '間合與先——世界頂尖劍士如何用距離感贏得一本',
+    subtitle: '有馬博之上段間合心法、高橋健太郎稽古前強化法、宮崎正裕初太刀哲學——技法三連發',
+    date: '2026-03-18',
+    issue_number: 3,
+    category: 'technique',
+    tags: ['間合', '攻め', '宮崎正裕', '上段', '腳腰強化', '稽古法', '技法研究', 'Kendo Jidai'],
+    excerpt: '本期技法週報聚焦三篇來自 Kendo Jidai International 的頂尖劍士洞察：有馬博之教士八段解析上段的間合心法；高橋健太郎強調腳腰是打擊根源；宮崎正裕揭示19年競技生涯的身體管理底層邏輯。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-03-16_taiwan-kendo-international-2026',
     title: '首戰亞洋洲、赴京都演武——台灣劍道2026春季國際部署',
     subtitle: '首屆亞洲大洋洲錦標賽代表隊選拔完成、京都大會招募啟動',
