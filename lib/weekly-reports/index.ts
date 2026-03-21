@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-03-21_international-kendo-aokc-2026',
+    title: '亞太首次洲際賽、澳洲錦標賽在即——2026是劍道國際格局的轉捩點',
+    subtitle: '首屆亞洲大洋洲錦標賽5月東京登場、美國備戰20WKC、澳洲錦標賽4月開打',
+    date: '2026-03-21',
+    issue_number: 4,
+    category: 'global',
+    tags: ['亞洲大洋洲錦標賽', '1AOKC', 'FIK', '世界劍道錦標賽', '澳洲劍道', 'Team USA', '東京武道館', '國際賽事'],
+    excerpt: '2026年國際劍道賽事格局正式成形。首屆亞洲大洋洲劍道錦標賽5月底於東京武道館登場，美國代表隊啟動2027世界錦標賽長期備戰計畫，澳洲全國錦標賽4月初率先揭幕，三條國際戰線同步推進。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-03-18_kendo-technique-maai-seme-2026',
     title: '間合與先——世界頂尖劍士如何用距離感贏得一本',
     subtitle: '有馬博之上段間合心法、高橋健太郎稽古前強化法、宮崎正裕初太刀哲學——技法三連發',
