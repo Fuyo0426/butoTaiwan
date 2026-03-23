@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-03-23_taiwan-kendo-kaohsiung-2026',
+    title: '400刀在高雄交鋒、獨臂劍王宣誓——台灣三月最熱的劍道週',
+    subtitle: '國際城市劍道大賽7國齊聚、柳生制剛流現身武德殿、亞大洋洲代表隊名單封盤',
+    date: '2026-03-23',
+    issue_number: 5,
+    category: 'taiwan',
+    tags: ['國際城市劍道大賽', '高雄武德殿', '獨臂劍王', '菊池雅樹', '柳生制剛流', '亞洲大洋洲錦標賽', '京都大會', '台灣劍道'],
+    excerpt: '高雄武德殿到中山大學，3月20至22日間400把竹刀的碰擊聲代表台灣劍道最熱的一週。日本獨臂劍王菊池雅樹擔任開幕宣誓代表，柳生制剛流百年古流現場演示。同時，首屆亞洲大洋洲錦標賽台灣代表隊已決選定案，京都大會名額也在倒數中。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-03-21_international-kendo-aokc-2026',
     title: '亞太首次洲際賽、澳洲錦標賽在即——2026是劍道國際格局的轉捩點',
     subtitle: '首屆亞洲大洋洲錦標賽5月東京登場、美國備戰20WKC、澳洲錦標賽4月開打',
