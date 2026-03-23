@@ -10,7 +10,7 @@ export function Footer() {
           <div className="md:col-span-2">
             <div className="mb-4">
               <p className="font-serif text-2xl font-bold text-white tracking-tight">武道台灣</p>
-              <p className="font-sans text-xs text-white/40 tracking-[0.2em] uppercase mt-1">butoTaiwan</p>
+              <p className="font-sans text-xs text-white/40 tracking-[0.2em] uppercase mt-1">ButoTaiwan</p>
             </div>
             <p className="font-sans text-sm leading-relaxed text-white/60 max-w-sm">
               台灣唯一以劍道為核心的週報媒體。每週精選全球劍道資訊，每月深度月刊。由台南武德殿製作，製作人：張復堯。
@@ -67,11 +67,17 @@ export function Footer() {
 
         <div className="border-t border-white/10 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
           <p className="font-sans text-xs text-white/30">
-            &copy; 2026 武道台灣 butoTaiwan. 台南武德殿製作.
+            &copy; 2026 武道台灣 ButoTaiwan. 台南武德殿製作.
           </p>
-          <p className="font-sans text-xs text-white/30">
-            製作人：張復堯
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="font-sans text-xs text-white/30">製作人：張復堯</p>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuto-taiwan.vercel.app&count_bg=%23780000&title_bg=%23222222&icon=&icon_color=%23ffffff&title=%E8%A8%AA%E5%AE%A2&edge_flat=true"
+              alt="visitor count"
+              className="opacity-40 hover:opacity-70 transition-opacity h-4"
+            />
+          </div>
         </div>
       </div>
     </footer>
