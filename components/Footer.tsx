@@ -69,15 +69,7 @@ export function Footer() {
           <p className="font-sans text-xs text-white/30">
             &copy; 2026 武道台灣 ButoTaiwan. 台南武德殿製作.
           </p>
-          <div className="flex items-center gap-4">
-            <p className="font-sans text-xs text-white/30">製作人：張復堯</p>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuto-taiwan.vercel.app&count_bg=%23780000&title_bg=%23222222&icon=&icon_color=%23ffffff&title=%E8%A8%AA%E5%AE%A2&edge_flat=true"
-              alt="visitor count"
-              className="opacity-40 hover:opacity-70 transition-opacity h-4"
-            />
-          </div>
+          <p className="font-sans text-xs text-white/30">製作人：張復堯</p>
         </div>
       </div>
     </footer>

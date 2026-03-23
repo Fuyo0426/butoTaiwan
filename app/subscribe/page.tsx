@@ -56,6 +56,15 @@ export default function SubscribePage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-8 flex items-center gap-2">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuto-taiwan.vercel.app&count_bg=%23780000&title_bg=%23333333&icon=&icon_color=%23ffffff&title=%E4%BD%8D%E5%8A%8D%E5%8F%8B%E9%80%A0%E8%A8%AA&edge_flat=true"
+              alt="visitor count"
+              className="h-5 opacity-60"
+            />
+          </div>
         </div>
 
         {/* Right: form */}
