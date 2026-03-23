@@ -85,6 +85,9 @@ export default function DojoPage() {
                 <Users size={14} className="mt-0.5 flex-shrink-0 text-kendo-black/40" />
                 <span>
                   總教練：{dojo.instructor}{dojo.instructorRank ? ` ${dojo.instructorRank}` : ''}
+                  {dojo.coaches && dojo.coaches.map(c => (
+                    <span key={c.name} className="ml-2 text-kendo-black/50">教練：{c.name} {c.rank}</span>
+                  ))}
                   {dojo.assistants && dojo.assistants.map(a => (
                     <span key={a.name} className="ml-2 text-kendo-black/50">助教：{a.name} {a.rank}</span>
                   ))}
