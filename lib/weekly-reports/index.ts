@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-03-25_kendo-technique-maai-waza',
+    title: '九十回稽古的積累：歐洲劍道如何把間合與技法練成一體',
+    subtitle: 'Kozaki Sensei「Maai & Waza」研習里程碑、ki-ken-tai-no-ichi 的精神底層、AJKF 三月指引',
+    date: '2026-03-25',
+    issue_number: 6,
+    category: 'technique',
+    tags: ['間合', '技法', 'ki-ken-tai', 'Maai', 'Waza', 'Kozaki Sensei', '歐洲劍道', 'AJKF', '剣窓', '劍道哲學'],
+    excerpt: '本期技法週報從三個視角切入：德國美因茨第90回劍道研習以「間合與技法」為主題；2026年初深度文章重新詮釋 ki-ken-tai-no-ichi；AJKF 三月剣窓提供日本劍道聯盟一線指引。三者共同指向：技法不是孤立招式，是身心整合的表達。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-03-23_taiwan-kendo-kaohsiung-2026',
     title: '400刀在高雄交鋒、獨臂劍王宣誓——台灣三月最熱的劍道週',
     subtitle: '國際城市劍道大賽7國齊聚、柳生制剛流現身武德殿、亞大洋洲代表隊名單封盤',
