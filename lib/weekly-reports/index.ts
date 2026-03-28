@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-03-28_international-kendo-20wkc-global',
+    title: '備戰2027：當劍道地圖從米蘭翻回東京，全球劍士開始移動',
+    subtitle: 'FIK 20WKC東京進入倒數、美國史上最系統化選拔機制啟動、全日本青少年邀請賽今日迎接海外劍士',
+    date: '2026-03-28',
+    issue_number: 7,
+    category: 'global',
+    tags: ['20WKC', '世界劍道錦標賽', '東京', 'Team USA', 'FIK', '全日本邀請青少年大賽', '國際劍道', '2027'],
+    excerpt: '2024年米蘭世界錦標賽結束不到兩年，全球劍道機器已悄然重啟。FIK確認20WKC於2027年5月東京登場，美國啟動史上最透明選拔機制，今日全日本邀請青少年賽則讓海外劍士親身踏上日本稽古場。備戰鐘聲在三個地方同時響起。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-03-25_kendo-technique-maai-waza',
     title: '九十回稽古的積累：歐洲劍道如何把間合與技法練成一體',
     subtitle: 'Kozaki Sensei「Maai & Waza」研習里程碑、ki-ken-tai-no-ichi 的精神底層、AJKF 三月指引',
