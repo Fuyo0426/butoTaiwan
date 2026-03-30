@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-03-30_taiwan-kendo-media-mainstream',
+    title: '竹刀上了中央社——當台灣劍道走進主流媒體的鏡頭',
+    subtitle: '中央通訊社、聯合報系正式報導國際城市劍道大賽，武德殿劍道推廣邁入第21年',
+    date: '2026-03-30',
+    issue_number: 8,
+    category: 'taiwan',
+    tags: ['中央社', '聯合報', '主流媒體', '高雄武德殿', '國際城市劍道大賽', '劍道文化推廣', '百年古蹟', '亞洲大洋洲錦標賽'],
+    excerpt: '本期新聞量不多，但訊號值得細品：中央通訊社以完整報導篇幅記錄高雄國際城市劍道大賽，聯合報系同步跟進——對長年在小眾圈裡默默修行的台灣劍道社群而言，這是一次難得的主流破圈。高雄武德殿自2005年起連續21年承辦國際劍道交流，百年古蹟化身亞太劍道文化重鎮的軌跡，終於被寫進國家級新聞。',
+    newsCount: 2,
+  },
+  {
     slug: '2026-03-28_international-kendo-20wkc-global',
     title: '備戰2027：當劍道地圖從米蘭翻回東京，全球劍士開始移動',
     subtitle: 'FIK 20WKC東京進入倒數、美國史上最系統化選拔機制啟動、全日本青少年邀請賽今日迎接海外劍士',
