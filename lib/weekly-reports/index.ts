@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-04-01_kendo-technique-ki-ken-tai',
+    title: '氣劍體一致的再發現——從紙上特集到場上足捌，技法訓練正在回歸身體',
+    subtitle: '《劍道時代》四月號 Ki-Ken-Tai 特集、Kendo Jidai 足捌集訓教程、AJKF 四月剣窓技術指引',
+    date: '2026-04-01',
+    issue_number: 9,
+    category: 'technique',
+    tags: ['氣劍體一致', 'ki-ken-tai', '足捌', 'ashi-sabaki', '間合', 'maai', '劍道時代', 'Kendo Jidai', 'AJKF', '剣窓', '技法研究'],
+    excerpt: '本期技法週報從三個層次切入同一個命題：身體才是技法的根。《劍道時代》四月號以「氣劍體一致」為封面特集，重新解構攻防一體的本質；Kendo Jidai International 三月刊出足捌集訓教程，強調步法是所有技法的前提；AJKF 四月剣窓則從制度面提供技術發展方向。三者匯聚的訊號明確——2026年的技法討論，正從「招式」回歸「身體」。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-03-30_taiwan-kendo-media-mainstream',
     title: '竹刀上了中央社——當台灣劍道走進主流媒體的鏡頭',
     subtitle: '中央通訊社、聯合報系正式報導國際城市劍道大賽，武德殿劍道推廣邁入第21年',
