@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-04-04_international-kendo-20wkc-prelude',
+    title: '東京序章已經寫下——20WKC前哨戰開跑，京都大會與府縣對抗賽同步收官',
+    subtitle: 'FIK 20WKC前夕活動三月東京登場、第122回京都大會海外報名進行中、第74回都道府縣對抗賽落幕',
+    date: '2026-04-04',
+    issue_number: 10,
+    category: 'global',
+    tags: ['20WKC', '世界劍道錦標賽', '東京', 'FIK', '京都大會', '演武大會', '都道府縣對抗賽', 'AJKF', '國際劍道', '2027'],
+    excerpt: '距離2027年東京20WKC不到14個月，FIK三月底在東京舉辦前夕活動，正式拉開備戰序幕。與此同時，第122回京都大會海外參加報名進入倒數、第74回全日本都道府縣對抗賽結果出爐——日本國內賽季正在為世界大賽暖機，全球劍士的東京之路已經啟程。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-04-01_kendo-technique-ki-ken-tai',
     title: '氣劍體一致的再發現——從紙上特集到場上足捌，技法訓練正在回歸身體',
     subtitle: '《劍道時代》四月號 Ki-Ken-Tai 特集、Kendo Jidai 足捌集訓教程、AJKF 四月剣窓技術指引',
