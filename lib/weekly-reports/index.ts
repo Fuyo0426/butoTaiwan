@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-04-06_taiwan-kendo-aokc-countdown',
+    title: '五十四天後東京見——台灣劍士的亞洲大洋洲倒數已經開始',
+    subtitle: '日本代表隊記者會公布陣容、澳洲代表隊名單出爐、1AOKC官方確認20國以上參賽',
+    date: '2026-04-06',
+    issue_number: 11,
+    category: 'taiwan',
+    tags: ['1AOKC', '亞洲大洋洲劍道錦標賽', '東京武道館', '台灣代表隊', '日本代表隊', '澳洲代表隊', 'FIK', 'AOKF', '國際劍道', '2026'],
+    excerpt: '距離史上首屆亞洲大洋洲劍道錦標賽僅剩54天，東京武道館的備戰鼓聲越來越近。日本以記者會規格公布代表隊陣容，澳洲同步發布選手名單——當各國劍士陸續就位，台灣代表隊早在一月底完成決選的先手優勢，能否轉化為五月底的場上表現，是接下來兩個月全台劍道社群最關注的懸念。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-04-04_international-kendo-20wkc-prelude',
     title: '東京序章已經寫下——20WKC前哨戰開跑，京都大會與府縣對抗賽同步收官',
     subtitle: 'FIK 20WKC前夕活動三月東京登場、第122回京都大會海外報名進行中、第74回都道府縣對抗賽落幕',
