@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-04-08_kendo-technique-chuken-training',
+    title: '中堅世代的技術深化——AJKF四月講習潮背後的備戰邏輯',
+    subtitle: '第61回中堅劍士講習會登場、令和八年度男女強化訓練提前啟動、四月號剣窓出刊',
+    date: '2026-04-08',
+    issue_number: 12,
+    category: 'technique',
+    tags: ['中堅劍士', '講習會', 'AJKF', '強化訓練', '20WKC', '剣窓', '技術深化', '五段', '七段', '備戰'],
+    excerpt: '本期三則新聞看似行政公告，背後藏著一條技術邏輯線：從中堅世代的段位深化，到國家隊強化訓練的提前開跑，AJKF正在用制度化講習體系為2027世界錦標賽鋪路。技法從來不只是個人修行，也是組織意志的表達。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-04-06_taiwan-kendo-aokc-countdown',
     title: '五十四天後東京見——台灣劍士的亞洲大洋洲倒數已經開始',
     subtitle: '日本代表隊記者會公布陣容、澳洲代表隊名單出爐、1AOKC官方確認20國以上參賽',
