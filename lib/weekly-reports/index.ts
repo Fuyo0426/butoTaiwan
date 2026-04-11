@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-04-11_international-kendo-continental-era',
+    title: '一個月、兩座洲際擂台——國際劍道正從觀賽模式切換為參戰模式',
+    subtitle: '首屆亞洲大洋洲錦標賽首創三段以下部門、第34屆歐洲劍道錦標賽六月蒙特內哥羅登場',
+    date: '2026-04-11',
+    issue_number: 13,
+    category: 'global',
+    tags: ['1AOKC', '亞洲大洋洲劍道錦標賽', 'EKC', '歐洲劍道錦標賽', '蒙特內哥羅', '東京武道館', 'EKF', 'FIK', '洲際賽', '三段以下', '波德戈里察'],
+    excerpt: '五月底東京、六月中波德戈里察——國際劍道日曆上首次出現洲際賽事「背靠背」的密度。首屆亞洲大洋洲錦標賽設立史無前例的三段以下部門，歐洲錦標賽首次移師巴爾幹半島，兩場賽事共同宣告：洲際賽時代已經不是規劃中的願景，而是正在發生的現實。',
+    newsCount: 2,
+  },
+  {
     slug: '2026-04-08_kendo-technique-chuken-training',
     title: '中堅世代的技術深化——AJKF四月講習潮背後的備戰邏輯',
     subtitle: '第61回中堅劍士講習會登場、令和八年度男女強化訓練提前啟動、四月號剣窓出刊',
