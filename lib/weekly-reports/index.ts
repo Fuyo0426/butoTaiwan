@@ -38,6 +38,17 @@ export interface WeeklyReportMeta {
 // 登記表 — 執行 /kendo-brief 後，將新報告加到這裡
 export const weeklyReports: WeeklyReportMeta[] = [
   {
+    slug: '2026-04-15_kendo-technique-suburi-transfer',
+    title: '素振千回，不如打通一條線——技法修行正在向「轉化力」集中',
+    subtitle: '《劍道時代》五月號特集素振直結本番、運動科學研究揭示八段熟練者實踐知、AJKF四月剣窓出刊',
+    date: '2026-04-15',
+    issue_number: 14,
+    category: 'technique',
+    tags: ['素振', '打込', '實踐知', '八段', '劍道時代', 'AJKF', '剣窓', '運動科學', '基本功轉化', '技法研究'],
+    excerpt: '本期技法週報從三個維度切入同一個命題：練習如何轉化為實力？《劍道時代》五月號以「素振・打込直結本番」為封面特集，正面回答基本功與比賽之間的鴻溝；日本運動科學期刊發表2026年最新研究，量化八段熟練者如何以戰術判斷力補償體能差距；AJKF四月《剣窓》持續提供技術發展的制度指引。三者匯聚的訊號明確——技法的價值不在「練了多少」，在「轉化了多少」。',
+    newsCount: 3,
+  },
+  {
     slug: '2026-04-11_international-kendo-continental-era',
     title: '一個月、兩座洲際擂台——國際劍道正從觀賽模式切換為參戰模式',
     subtitle: '首屆亞洲大洋洲錦標賽首創三段以下部門、第34屆歐洲劍道錦標賽六月蒙特內哥羅登場',
