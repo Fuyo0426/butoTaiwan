@@ -1,16 +1,6 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowRight, Lightning, Users, Shield } from '@phosphor-icons/react/dist/ssr'
-import { kendoTypes } from '@/lib/kendoti/data'
-import type { TypeCode } from '@/lib/kendoti/types'
-
-const GRID_ORDER: TypeCode[] = [
-  'AJRG', 'AJRH', 'AJSG', 'AJSH',
-  'AKRG', 'AKRH', 'AKSG', 'AKSH',
-  'UJRG', 'UJRH', 'UJSG', 'UJSH',
-  'UKRG', 'UKRH', 'UKSG', 'UKSH',
-]
 
 export const metadata: Metadata = {
   title: 'kendoTI 劍道人格測驗',
@@ -43,7 +33,7 @@ export default function KendoTIIntroPage() {
       </div>
 
       {/* CTA */}
-      <div className="flex justify-center mb-12">
+      <div className="flex justify-center mb-16">
         <Link
           href="/kendoti/quiz"
           className="inline-flex items-center gap-3 px-8 py-4 bg-kendo-red text-white font-serif text-lg font-semibold rounded-sm hover:bg-kendo-red/90 active:scale-[0.98] transition-all"
@@ -51,35 +41,6 @@ export default function KendoTIIntroPage() {
           開始測驗
           <ArrowRight size={20} weight="bold" />
         </Link>
-      </div>
-
-      {/* 16-type portrait grid */}
-      <div className="mb-16">
-        <p className="font-serif text-xs text-kendo-red tracking-[0.3em] text-center mb-4">16 PERSONAS</p>
-        <div className="grid grid-cols-4 gap-2 md:gap-3">
-          {GRID_ORDER.map((code) => {
-            const t = kendoTypes[code]
-            return (
-              <Link
-                key={code}
-                href={`/kendoti/result/${code}`}
-                className="group relative aspect-square bg-paper border border-border hover:border-kendo-red transition-colors overflow-hidden"
-              >
-                <Image
-                  src={t.portrait}
-                  alt={`${t.nickname} · ${t.name}`}
-                  fill
-                  sizes="(max-width: 768px) 25vw, 200px"
-                  className="object-contain p-1 group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-kendo-black/90 via-kendo-black/60 to-transparent p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                  <p className="font-serif text-xs font-bold text-white leading-tight">{t.nickname}</p>
-                  <p className="font-sans text-[10px] text-white/70 leading-tight">{t.name}</p>
-                </div>
-              </Link>
-            )
-          })}
-        </div>
       </div>
 
       {/* Features */}

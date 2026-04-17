@@ -3,13 +3,14 @@
 import { useEffect, useMemo, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
-import { ArrowLeft } from '@phosphor-icons/react'
+import { ArrowLeft, ArrowRight } from '@phosphor-icons/react'
 import { questions } from '@/lib/kendoti/questions'
 import { scoreAnswers, resolveTypeCode } from '@/lib/kendoti/scoring'
 import { QuizCard } from '@/components/kendoti/QuizCard'
 import { ProgressBar } from '@/components/kendoti/ProgressBar'
 
 const STORAGE_KEY = 'kendoti.progress.v1'
+const NICK_KEY = 'kendoti.nickname.v1'
 
 type AnswerMap = Record<number, 0 | 1 | 2>
 
@@ -18,6 +19,8 @@ export default function QuizPage() {
   const [idx, setIdx] = useState(0)
   const [answers, setAnswers] = useState<AnswerMap>({})
   const [restored, setRestored] = useState(false)
+  const [nickname, setNickname] = useState('')
+  const [started, setStarted] = useState(false)
 
   useEffect(() => {
     try {
@@ -27,8 +30,11 @@ export default function QuizPage() {
         if (typeof data.idx === 'number' && data.answers) {
           setIdx(Math.min(data.idx, questions.length - 1))
           setAnswers(data.answers)
+          setStarted(true)
         }
       }
+      const savedNick = localStorage.getItem(NICK_KEY)
+      if (savedNick) setNickname(savedNick)
     } catch {}
     setRestored(true)
   }, [])
@@ -45,10 +51,20 @@ export default function QuizPage() {
     if (!done) return
     const score = scoreAnswers(questions, answers)
     const code = resolveTypeCode(score)
-    localStorage.setItem('kendoti.result.v1', JSON.stringify({ code, score, answers }))
+    const savedNick = (typeof window !== 'undefined' ? localStorage.getItem(NICK_KEY) : '') || ''
+    localStorage.setItem('kendoti.result.v1', JSON.stringify({ code, score, answers, nickname: savedNick }))
     localStorage.removeItem(STORAGE_KEY)
-    router.replace(`/kendoti/result/${code}`)
+    const q = savedNick ? `?name=${encodeURIComponent(savedNick)}` : ''
+    router.replace(`/kendoti/result/${code}${q}`)
   }, [done, answers, router])
+
+  function handleStart() {
+    const trimmed = nickname.trim().slice(0, 20)
+    setNickname(trimmed)
+    if (trimmed) localStorage.setItem(NICK_KEY, trimmed)
+    else localStorage.removeItem(NICK_KEY)
+    setStarted(true)
+  }
 
   function handleAnswer(choice: 0 | 1 | 2) {
     if (!q) return
@@ -71,6 +87,59 @@ export default function QuizPage() {
     return (
       <div className="max-w-[720px] mx-auto px-4 md:px-8 py-20 text-center font-sans text-sm text-kendo-black/50">
         載入中…
+      </div>
+    )
+  }
+
+  if (!started) {
+    return (
+      <div className="max-w-[560px] mx-auto px-4 md:px-8 py-14">
+        <Link
+          href="/kendoti"
+          className="inline-flex items-center gap-2 font-sans text-xs text-kendo-black/50 hover:text-kendo-red transition-colors mb-10"
+        >
+          <ArrowLeft size={12} />
+          回介紹頁
+        </Link>
+
+        <div className="text-center mb-10">
+          <p className="font-serif text-xs text-kendo-red tracking-[0.3em] mb-3">STEP 0 / 45</p>
+          <h1 className="font-serif text-3xl md:text-4xl font-black text-kendo-black mb-3">
+            先告訴我怎麼稱呼你
+          </h1>
+          <p className="font-sans text-sm text-kendo-black/60 leading-relaxed">
+            結果頁會顯示你的暱稱,分享時道場同伴一看就知道是你。
+            <br />
+            不想填?直接按「開始測驗」也可以。
+          </p>
+        </div>
+
+        <div className="mb-8">
+          <label htmlFor="nickname" className="block font-sans text-xs text-kendo-black/50 tracking-[0.2em] mb-2">
+            暱稱(可留空,最多 20 字)
+          </label>
+          <input
+            id="nickname"
+            type="text"
+            value={nickname}
+            onChange={(e) => setNickname(e.target.value.slice(0, 20))}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') handleStart()
+            }}
+            placeholder="例:小林、Yao、道場阿偉"
+            maxLength={20}
+            className="w-full px-4 py-3 bg-paper border border-border focus:border-kendo-red focus:outline-none font-serif text-lg text-kendo-black placeholder:text-kendo-black/30 transition-colors"
+            autoFocus
+          />
+        </div>
+
+        <button
+          onClick={handleStart}
+          className="w-full inline-flex items-center justify-center gap-3 px-8 py-4 bg-kendo-red text-white font-serif text-lg font-semibold rounded-sm hover:bg-kendo-red/90 active:scale-[0.99] transition-all"
+        >
+          開始測驗
+          <ArrowRight size={20} weight="bold" />
+        </button>
       </div>
     )
   }

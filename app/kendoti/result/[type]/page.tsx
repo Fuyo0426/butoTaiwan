@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -7,6 +8,7 @@ import { kendoTypes } from '@/lib/kendoti/data'
 import type { TypeCode } from '@/lib/kendoti/types'
 import { HexChart } from '@/components/kendoti/HexChart'
 import { ShareButtons } from '@/components/kendoti/ShareButtons'
+import { NicknameGreeting } from '@/components/kendoti/NicknameGreeting'
 
 const BASE_URL = 'https://buto-taiwan.vercel.app'
 
@@ -80,6 +82,9 @@ export default function ResultPage({ params }: Props) {
 
         {/* Hero */}
         <header className="text-center mb-12 pb-10 border-b border-border">
+          <Suspense fallback={null}>
+            <NicknameGreeting />
+          </Suspense>
           <p className="font-sans text-xs text-kendo-black/50 tracking-[0.3em] mb-3">YOUR KENDO-TI</p>
           <div className="flex items-baseline justify-center gap-3 mb-3">
             <span className="font-serif text-sm text-kendo-black/40 tracking-[0.2em]">{t.code}</span>
