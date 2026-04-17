@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
@@ -84,6 +85,18 @@ export default function ResultPage({ params }: Props) {
             <span className="font-serif text-sm text-kendo-black/40 tracking-[0.2em]">{t.code}</span>
             <span className="text-kendo-black/20">·</span>
             <span className="font-serif text-sm text-kendo-black/60 tracking-[0.3em]">{t.nickname}</span>
+          </div>
+          <div className="flex justify-center mb-5">
+            <div className="relative w-64 h-64 md:w-80 md:h-80">
+              <Image
+                src={t.portrait}
+                alt={`${t.nickname} · ${t.name}`}
+                fill
+                sizes="(max-width: 768px) 256px, 320px"
+                priority
+                className="object-contain"
+              />
+            </div>
           </div>
           <h1 className="font-serif text-5xl md:text-7xl font-black text-kendo-red leading-tight mb-4">
             {t.name}

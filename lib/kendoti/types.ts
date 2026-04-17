@@ -37,6 +37,7 @@ export interface KendoTIType {
   loveBonus: string
   shareText: string
   stats: SixStats
+  portrait: string
 }
 
 export interface AxisScore {

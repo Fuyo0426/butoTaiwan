@@ -31,6 +31,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '跟你交往的人會學會怎麼摺劍道衣。這是好事也是壞事。',
     shareText: '我的 kendoTI:KING · 道場王者\n基本功像字帖,壓迫感像段審。\n試合靠腳本,練習當字寫。\n不是最受歡迎的,是最被默默尊敬的。',
     stats: { men: 8, kote: 7, do: 7, kiai: 7, maai: 9, zanshin: 9 },
+    portrait: '/kendoti/personas/AJRG.png',
   },
   AJRH: {
     code: 'AJRH',
@@ -61,6 +62,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '第一次約會你們就在討論試合策略。浪漫不浪漫看人。',
     shareText: '我的 kendoTI:BOSS · 試合大魔王\n平時看起來很懶,上場嚇死你。\n讀對手像下棋,變招狠如獵豹。\n你贏不了我的腳本,輸給我也別不甘。',
     stats: { men: 9, kote: 8, do: 7, kiai: 6, maai: 10, zanshin: 6 },
+    portrait: '/kendoti/personas/AJRH.png',
   },
   AJSG: {
     code: 'AJSG',
@@ -91,6 +93,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你在約會的時候會不自覺分析對方走路的節奏。是職業病。',
     shareText: '我的 kendoTI:MEN! · 面打狂熱者\n三本打突只記得 MEN。\n但 MEN 打得又直又狠。\n你防得了第一下,防不了第十下。',
     stats: { men: 10, kote: 3, do: 4, kiai: 8, maai: 6, zanshin: 6 },
+    portrait: '/kendoti/personas/AJSG.png',
   },
   AJSH: {
     code: 'AJSH',
@@ -121,6 +124,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你們的交往公告會在道場公布欄貼一張心型照片。大家早就知道了。',
     shareText: '我的 kendoTI:SON · 熱血少年篇\n每次稽古都像最終話。\n氣合聲隔壁道場投訴。\n但你還是會笑著說下次再打。',
     stats: { men: 9, kote: 4, do: 5, kiai: 10, maai: 4, zanshin: 3 },
+    portrait: '/kendoti/personas/AJSH.png',
   },
   AKRG: {
     code: 'AKRG',
@@ -151,6 +155,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會在交往第三個月畫出你對象的行為分析圖。對方可能會被嚇到。',
     shareText: '我的 kendoTI:SIFU · 道場孔明\n打你之前已經預測你下三手。\n我不靠快,我靠你根本還沒想好。\n跟我對練一次等於上一堂戰術課。',
     stats: { men: 6, kote: 9, do: 7, kiai: 5, maai: 10, zanshin: 9 },
+    portrait: '/kendoti/personas/AKRG.png',
   },
   AKRH: {
     code: 'AKRH',
@@ -181,6 +186,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你在約會時會不自覺掃視房間安全出口。這是動物本能。',
     shareText: '我的 kendoTI:HUNT · 野獸先鋒型\n不靠算,靠本能。\n你動我已經反射。\n姿勢不標準,但你就是贏不了。',
     stats: { men: 8, kote: 8, do: 9, kiai: 7, maai: 5, zanshin: 4 },
+    portrait: '/kendoti/personas/AKRH.png',
   },
   AKSG: {
     code: 'AKSG',
@@ -211,6 +217,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你在吵架時會忍不住發出氣合聲。對方可能會笑也可能會生氣。',
     shareText: '我的 kendoTI:KIAI · 氣合熔岩\n氣勢拉滿但技術普通。\n存在感比打擊還痛。\n沒有我的道場是墳場。',
     stats: { men: 7, kote: 3, do: 4, kiai: 10, maai: 5, zanshin: 6 },
+    portrait: '/kendoti/personas/AKSG.png',
   },
   AKSH: {
     code: 'AKSH',
@@ -241,6 +248,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你在告白的時候會念出動漫台詞。對方會感動也會尷尬。',
     shareText: '我的 kendoTI:BAKA · 燃燒中二病\n腦子還在熱身,身體已經開團。\n沒邏輯,就贏。\n坂本龍馬投胎來打劍道。',
     stats: { men: 10, kote: 3, do: 4, kiai: 10, maai: 3, zanshin: 2 },
+    portrait: '/kendoti/personas/AKSH.png',
   },
   UJRG: {
     code: 'UJRG',
@@ -271,6 +279,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會先想一百種表白方式,然後一個都不用。',
     shareText: '我的 kendoTI:2DAN · 萬年二段達人\n考了八次三段沒過。\n動作漂亮到評審懷疑人生。\n我不是不會,我只是不敢。',
     stats: { men: 5, kote: 8, do: 7, kiai: 4, maai: 9, zanshin: 9 },
+    portrait: '/kendoti/personas/UJRG.png',
   },
   UJRH: {
     code: 'UJRH',
@@ -301,6 +310,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會記住對方說過的每一句話,但不會主動提起。這是暖的也是累的。',
     shareText: '我的 kendoTI:ZZZZ · 裝死觀察者\n平時像關機。\n關鍵一瞬突然出頭小手。\n你看不出我在練,那是因為你沒在看。',
     stats: { men: 3, kote: 10, do: 7, kiai: 4, maai: 9, zanshin: 7 },
+    portrait: '/kendoti/personas/UJRH.png',
   },
   UJSG: {
     code: 'UJSG',
@@ -331,6 +341,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會在第一次約會時就開始想對方的父母生日。這是愛意也是職業病。',
     shareText: '我的 kendoTI:OYAJ · 道場老爸型\n不是最猛的,是最會帶新人的。\n道場的情感基石。\n沒有我的道場就只是個場地。',
     stats: { men: 6, kote: 7, do: 6, kiai: 7, maai: 8, zanshin: 9 },
+    portrait: '/kendoti/personas/UJSG.png',
   },
   UJSH: {
     code: 'UJSH',
@@ -361,6 +372,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你在紀念日前三天會問對方「想吃什麼都 OK 啦」。對方會翻白眼也會笑。',
     shareText: '我的 kendoTI:OKLA · OK 啦台灣人\n不挑稽古對象,不怕亂流。\n打得出乎意料的準。\n跟我打,你不會太慘。',
     stats: { men: 6, kote: 7, do: 8, kiai: 6, maai: 7, zanshin: 7 },
+    portrait: '/kendoti/personas/UJSH.png',
   },
   UKRG: {
     code: 'UKRG',
@@ -391,6 +403,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會在對方說晚安後默默看著窗外三分鐘。那是你的殘心。',
     shareText: '我的 kendoTI:NOZK · 殘心修行僧\n打完必殘心三秒。\n連素振都殘心。\n修的不是劍,是自己。',
     stats: { men: 4, kote: 7, do: 6, kiai: 6, maai: 8, zanshin: 10 },
+    portrait: '/kendoti/personas/UKRG.png',
   },
   UKRH: {
     code: 'UKRH',
@@ -421,6 +434,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會記得對方每一次生氣的原因,但不會主動問。你的後發先至是武器也是枷鎖。',
     shareText: '我的 kendoTI:LAST · 後發先至仙人\n從不先動但總是最後得分。\n在等對手犯錯那 0.2 秒。\n我不是慢,是你太早動了。',
     stats: { men: 3, kote: 10, do: 7, kiai: 5, maai: 10, zanshin: 8 },
+    portrait: '/kendoti/personas/UKRH.png',
   },
   UKSG: {
     code: 'UKSG',
@@ -451,6 +465,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會在第一次牽手前先 45 度鞠躬。對方會笑,但會很感動。',
     shareText: '我的 kendoTI:BUDO · 武道傳承者\n講究禮儀 > 講究分數。\n打的是劍道,不是打分遊戲。\n沒有禮,你打得再好也不是劍道。',
     stats: { men: 5, kote: 6, do: 5, kiai: 9, maai: 7, zanshin: 10 },
+    portrait: '/kendoti/personas/UKSG.png',
   },
   UKSH: {
     code: 'UKSH',
@@ -481,6 +496,7 @@ export const kendoTypes: Record<TypeCode, KendoTIType> = {
     loveBonus: '你會在對方最崩潰的那一刻微笑並說「沒事」。那是最可怕也最安心的存在。',
     shareText: '我的 kendoTI:FOMO · 佛系氣魄型\n氣場強但不爭。\n挑釁我微笑一下,然後把你打哭。\n你打不贏我,因為我沒在跟你比。',
     stats: { men: 4, kote: 7, do: 6, kiai: 8, maai: 8, zanshin: 10 },
+    portrait: '/kendoti/personas/UKSH.png',
   },
 }
 

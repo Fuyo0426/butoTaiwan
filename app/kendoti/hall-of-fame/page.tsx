@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import { ArrowLeft } from '@phosphor-icons/react/dist/ssr'
@@ -30,8 +31,17 @@ export default function HallOfFamePage() {
       <div className="grid md:grid-cols-2 gap-4">
         {types.map((t) => (
           <Link key={t.code} href={`/kendoti/result/${t.code}`} className="group block p-6 border border-border hover:border-kendo-red bg-paper transition-colors">
-            <div className="flex items-baseline justify-between mb-3 pb-3 border-b border-border group-hover:border-kendo-red/30 transition-colors">
-              <div>
+            <div className="flex items-center gap-4 mb-3 pb-3 border-b border-border group-hover:border-kendo-red/30 transition-colors">
+              <div className="relative w-20 h-20 shrink-0 bg-kendo-red/5 rounded-sm overflow-hidden">
+                <Image
+                  src={t.portrait}
+                  alt={`${t.nickname} · ${t.name}`}
+                  fill
+                  sizes="80px"
+                  className="object-contain"
+                />
+              </div>
+              <div className="flex-1 min-w-0">
                 <p className="font-serif text-xl font-bold text-kendo-black group-hover:text-kendo-red transition-colors">
                   {t.nickname} · {t.name}
                 </p>
