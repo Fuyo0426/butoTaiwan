@@ -1,4 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
+import crypto from 'crypto'
+import { getSupabaseClient } from '@/lib/supabase'
+import { getResend, getFrom, welcomeEmailHtml, getBaseUrl } from '@/lib/email'
 
 export async function POST(req: NextRequest) {
   const { name, email } = await req.json()
@@ -7,36 +10,38 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: '請輸入有效的電子信箱' }, { status: 400 })
   }
 
-  const apiKey = process.env.MAILERLITE_API_KEY
-  if (!apiKey) {
-    return NextResponse.json({ error: '服務設定錯誤' }, { status: 500 })
-  }
+  const supabase = getSupabaseClient()
+  const token = crypto.randomBytes(32).toString('hex')
+  const baseUrl = getBaseUrl()
 
-  try {
-    const body: Record<string, unknown> = { email }
-    if (name) body.fields = { name }
+  const { error } = await supabase.from('subscribers').upsert(
+    { email, name: name ?? null, token, confirmed: true },
+    { onConflict: 'email' }
+  )
 
-    const groupId = process.env.MAILERLITE_GROUP_ID
-    if (groupId) body.groups = [groupId]
-
-    const res = await fetch('https://connect.mailerlite.com/api/subscribers', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${apiKey}`,
-      },
-      body: JSON.stringify(body),
-    })
-
-    if (!res.ok) {
-      const err = await res.json()
-      console.error('MailerLite error:', err)
-      return NextResponse.json({ error: '訂閱失敗，請稍後再試' }, { status: 500 })
-    }
-
-    return NextResponse.json({ success: true })
-  } catch (error) {
-    console.error('Subscribe error:', error)
+  if (error) {
+    console.error('Supabase error:', error)
     return NextResponse.json({ error: '訂閱失敗，請稍後再試' }, { status: 500 })
   }
+
+  const unsubscribeUrl = `${baseUrl}/api/unsubscribe?token=${token}`
+
+  try {
+    const resend = getResend()
+    const { error: emailError } = await resend.emails.send({
+      from: getFrom(),
+      to: email,
+      subject: '歡迎加入武道台灣 — 創刊號即將送達',
+      html: welcomeEmailHtml(name ?? '', unsubscribeUrl),
+    })
+    if (emailError) {
+      console.error('Resend error:', emailError)
+      return NextResponse.json({ error: '寄信失敗', detail: emailError.message }, { status: 500 })
+    }
+  } catch (err) {
+    console.error('Email error:', err)
+    return NextResponse.json({ error: '寄信失敗，請稍後再試' }, { status: 500 })
+  }
+
+  return NextResponse.json({ success: true })
 }

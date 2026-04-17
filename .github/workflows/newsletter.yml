@@ -1,0 +1,28 @@
+name: Send Newsletter
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - 'lib/data.ts'  # 只有文章資料更新時才觸發
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: npm install nodemailer @supabase/supabase-js
+
+      - name: Send newsletter
+        run: node scripts/send-newsletter.mjs
+        env:
+          OUTLOOK_USER: ${{ secrets.OUTLOOK_USER }}
+          OUTLOOK_PASSWORD: ${{ secrets.OUTLOOK_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          NEXT_PUBLIC_BASE_URL: https://buto-taiwan.vercel.app

@@ -1,13 +1,20 @@
 'use client'
 
-import { useState } from 'react'
-import type { Metadata } from 'next'
+import { useState, useEffect } from 'react'
 
 export default function SubscribePage() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
+  const [visitorCount, setVisitorCount] = useState<number | null>(null)
+
+  useEffect(() => {
+    fetch('/api/visitors', { method: 'POST' })
+      .then((r) => r.json())
+      .then((d) => setVisitorCount(d.count))
+      .catch(() => {})
+  }, [])
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault()
@@ -57,14 +64,14 @@ export default function SubscribePage() {
             ))}
           </div>
 
-          <div className="mt-8 flex items-center gap-2">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fbuto-taiwan.vercel.app&count_bg=%23780000&title_bg=%23333333&icon=&icon_color=%23ffffff&title=%E4%BD%8D%E5%8A%8D%E5%8F%8B%E9%80%A0%E8%A8%AA&edge_flat=true"
-              alt="visitor count"
-              className="h-5 opacity-60"
-            />
-          </div>
+          {visitorCount !== null && (
+            <div className="mt-8 flex items-center gap-2">
+              <div className="w-1.5 h-1.5 bg-kendo-red/60 rounded-full" />
+              <p className="font-sans text-xs text-kendo-black/40 tracking-wider">
+                已有 <span className="text-kendo-black/60">{visitorCount.toLocaleString()}</span> 位劍友造訪
+              </p>
+            </div>
+          )}
         </div>
 
         {/* Right: form */}
