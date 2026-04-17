@@ -39,11 +39,13 @@ export default function IssuesPage() {
                   {issue.title}
                 </h2>
                 <p className="font-sans text-sm text-kendo-black/40 mt-2 leading-relaxed">{issue.subtitle}</p>
-                <div className="mt-4 pt-4 border-t border-border">
-                  <p className="font-sans text-xs text-kendo-black/30">
-                    本期人物：{issue.featurePersonName}·{issue.featurePersonTitle}
-                  </p>
-                </div>
+                {issue.featurePersonName && (
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="font-sans text-xs text-kendo-black/30">
+                      本期人物：{issue.featurePersonName}·{issue.featurePersonTitle}
+                    </p>
+                  </div>
+                )}
               </article>
             )
           }
@@ -67,9 +69,11 @@ export default function IssuesPage() {
                   {issue.title}
                 </h2>
                 <p className="font-sans text-sm text-kendo-black/60 mt-2 leading-relaxed">{issue.subtitle}</p>
-                <div className="mt-4 pt-4 border-t border-border">
-                  <p className="font-sans text-xs text-kendo-black/40">本期特輯：{issue.featurePersonName}&middot;{issue.featurePersonTitle}</p>
-                </div>
+                {issue.featurePersonName && (
+                  <div className="mt-4 pt-4 border-t border-border">
+                    <p className="font-sans text-xs text-kendo-black/40">本期特輯：{issue.featurePersonName}&middot;{issue.featurePersonTitle}</p>
+                  </div>
+                )}
               </Link>
             </article>
           )

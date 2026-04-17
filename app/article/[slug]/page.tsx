@@ -1,4 +1,6 @@
 import { articles, categoryLabels, categoryColors } from '@/lib/data'
+
+const BASE_URL = 'https://buto-taiwan.vercel.app'
 import Image from 'next/image'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
@@ -24,7 +26,33 @@ export default function ArticlePage({ params }: Props) {
   const article = articles.find((a) => a.slug === params.slug)
   if (!article) notFound()
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.excerpt,
+    image: article.coverImage,
+    datePublished: `${article.publishedAt}T00:00:00+08:00`,
+    dateModified: `${article.publishedAt}T00:00:00+08:00`,
+    author: { '@type': 'Person', name: article.author },
+    publisher: {
+      '@type': 'Organization',
+      name: '武道台灣 ButoTaiwan',
+      url: BASE_URL,
+    },
+    url: `${BASE_URL}/article/${article.slug}`,
+    keywords: article.tags.join(', '),
+    articleSection: categoryLabels[article.category],
+    inLanguage: 'zh-TW',
+    timeRequired: `PT${article.readTime}M`,
+  }
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
     <div className="max-w-[1400px] mx-auto px-4 md:px-8 py-10">
       {/* Back */}
       <Link href="/weekly" className="inline-flex items-center gap-2 font-sans text-sm text-kendo-black/50 hover:text-kendo-red transition-colors mb-8">
@@ -188,5 +216,6 @@ export default function ArticlePage({ params }: Props) {
         </aside>
       </div>
     </div>
+    </>
   )
 }

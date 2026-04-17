@@ -17,29 +17,35 @@ export default function PeoplePage() {
         <p className="font-sans text-base text-kendo-black/60 mt-3">記錄台灣劍道人的生命故事與技術傳承。</p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {people.map((person) => (
-          <Link key={person.id} href={`/people/${person.slug}`} className="group">
-            <div className="relative aspect-square overflow-hidden rounded-sm mb-4">
-              <Image
-                src={person.photo}
-                alt={person.name}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-kendo-black/70 to-transparent">
-                <p className="font-sans text-xs text-white/70">{person.rank}</p>
+      {people.length === 0 ? (
+        <div className="py-24 text-center">
+          <p className="font-sans text-base text-kendo-black/40">人物誌陸續收錄中，敬請期待。</p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {people.map((person) => (
+            <Link key={person.id} href={`/people/${person.slug}`} className="group">
+              <div className="relative aspect-square overflow-hidden rounded-sm mb-4">
+                <Image
+                  src={person.photo}
+                  alt={person.name}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-kendo-black/70 to-transparent">
+                  <p className="font-sans text-xs text-white/70">{person.rank}</p>
+                </div>
               </div>
-            </div>
-            <h3 className="font-serif text-xl font-bold text-kendo-black group-hover:text-kendo-red transition-colors">
-              {person.name}
-            </h3>
-            <p className="font-sans text-sm text-kendo-black/60 mt-1">{person.title}</p>
-            <p className="font-sans text-sm text-kendo-black/40 mt-1">{person.dojo}</p>
-            <p className="font-sans text-sm text-kendo-black/60 mt-3 line-clamp-3 leading-relaxed">{person.bio}</p>
-          </Link>
-        ))}
-      </div>
+              <h3 className="font-serif text-xl font-bold text-kendo-black group-hover:text-kendo-red transition-colors">
+                {person.name}
+              </h3>
+              <p className="font-sans text-sm text-kendo-black/60 mt-1">{person.title}</p>
+              <p className="font-sans text-sm text-kendo-black/40 mt-1">{person.dojo}</p>
+              <p className="font-sans text-sm text-kendo-black/60 mt-3 line-clamp-3 leading-relaxed">{person.bio}</p>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   )
 }

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 52" width="200" height="52" role="img" aria-label="butoTaiwan 武道台灣">
+  <!-- 黑白版：用於印刷、名片、傳真等單色場合 -->
+  <text
+    x="0"
+    y="32"
+    font-family="'Noto Serif TC', 'Noto Serif', serif"
+    font-size="28"
+    font-weight="700"
+    fill="#1A1A1A"
+    letter-spacing="-0.5"
+  >武道台灣</text>
+  <text
+    x="2"
+    y="48"
+    font-family="'Noto Sans TC', 'Noto Sans', sans-serif"
+    font-size="8"
+    font-weight="400"
+    fill="#1A1A1A"
+    letter-spacing="3.5"
+    opacity="0.5"
+  >BUTOTAIWAN</text>
+</svg>

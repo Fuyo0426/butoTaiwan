@@ -23,7 +23,7 @@ export async function GET() {
   const rss = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>武道台灣 butoTaiwan</title>
+    <title>武道台灣 ButoTaiwan</title>
     <link>${baseUrl}</link>
     <description>台灣劍道週報。由台南武德殿製作，每週精選全球劍道資訊，每月深度月刊訪談台灣劍道前輩。</description>
     <language>zh-TW</language>

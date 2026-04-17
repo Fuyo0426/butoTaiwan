@@ -3,7 +3,7 @@ export function MarqueeStrip() {
     '竹刀一揮，心意相通',
     '台南武德殿製作',
     '劍道文化傳承',
-    '武道台灣 butoTaiwan',
+    '武道台灣 ButoTaiwan',
     '全台劍道資訊',
     '每週四更新',
   ]
