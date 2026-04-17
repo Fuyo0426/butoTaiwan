@@ -10,6 +10,7 @@ const navLinks = [
   { href: '/calendar', label: '賽事日曆' },
   { href: '/dojo', label: '道場地圖' },
   { href: '/people', label: '人物誌' },
+  { href: '/kendoti', label: 'kendoTI' },
   { href: '/about', label: '關於我們' },
 ]
 
@@ -26,7 +27,7 @@ export function Navbar() {
               武道台灣
             </span>
             <span className="font-sans text-[10px] text-kendo-black/50 tracking-[0.2em] uppercase">
-              butoTaiwan
+              ButoTaiwan
             </span>
           </Link>
 
